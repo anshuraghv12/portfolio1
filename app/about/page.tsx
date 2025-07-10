@@ -1,13 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import GeometricWaves from "@/components/3d/GeometricWaves"
 import ParticleBackground from "@/components/ParticleBackground"
 
 export default function About() {
   return (
     <div className="min-h-screen relative pt-20 pb-16 overflow-hidden">
-      <GeometricWaves />
+      {/* Temporary placeholder for Three.js component */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-amber-100/20 to-yellow-100/20"></div>
       <ParticleBackground count={25} />
       <div className="absolute inset-0 bg-gradient-to-br from-amber-50/50 via-transparent to-yellow-50/50 -z-20"></div>
 

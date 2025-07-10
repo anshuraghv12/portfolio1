@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { Plane } from "@react-three/drei"
 import type * as THREE from "three"
@@ -39,7 +39,7 @@ function WavePlane({ position, color }: { position: [number, number, number]; co
   )
 }
 
-export default function GeometricWaves() {
+function GeometricWavesInner() {
   return (
     <Canvas className="absolute inset-0 -z-10">
       <ambientLight intensity={0.4} />
@@ -48,5 +48,28 @@ export default function GeometricWaves() {
       <WavePlane position={[0, 0, -5]} color="#f59e0b" />
       <WavePlane position={[0, 0, -7]} color="#d97706" />
     </Canvas>
+  )
+}
+
+// NoSSR wrapper to prevent server-side rendering
+function NoSSR({ children }: { children: React.ReactNode }) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return <div className="absolute inset-0 -z-10" />
+  }
+
+  return <>{children}</>
+}
+
+export default function GeometricWaves() {
+  return (
+    <NoSSR>
+      <GeometricWavesInner />
+    </NoSSR>
   )
 }

@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import EnhancedFloatingShapes from "@/components/3d/EnhancedFloatingShapes"
 import ParticleBackground from "@/components/ParticleBackground"
 import EnhancedSliderButton from "@/components/EnhancedSliderButton"
 import FloatingContactLinks from "@/components/FloatingContactLinks"
@@ -10,7 +9,8 @@ import Image from "next/image"
 export default function Home() {
   return (
     <div className="min-h-screen relative flex items-center justify-center pt-16 overflow-hidden">
-      <EnhancedFloatingShapes />
+      {/* Temporary placeholder for Three.js component */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-amber-100/20 to-yellow-100/20"></div>
       <ParticleBackground count={30} />
       <FloatingContactLinks />
 

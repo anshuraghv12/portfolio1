@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import TechConstellation from "@/components/3d/TechConstellation"
 
 const technicalSkills = {
   Languages: ["Python", "Java", "C", "C++", "MySQL"],
@@ -23,7 +22,8 @@ const softSkills = [
 export default function Skills() {
   return (
     <div className="min-h-screen relative pt-24 pb-16 overflow-hidden">
-      <TechConstellation />
+      {/* Temporary placeholder for Three.js component */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-100/20 to-purple-100/20"></div>
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30 -z-20"></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
